@@ -5,7 +5,7 @@ Plugin URI: http://sivel.net/wordpress/
 Description: Moves the gallery shortcode styles to the head so it doesn't break XHTML validation
 Author: Matt Martz <mdmartz@sivel.net>
 Author URI: http://sivel.net/
-Version: 1.0
+Version: 1.1
 
         Copyright (c) 2008 Matt Martz (http://sivel.net)
         Gallery Attribute Adder is released under the GNU Lesser General Public License (LGPL)
@@ -91,7 +91,8 @@ function gallery_shortcode_style_out ( $attr ) {
 // Default gallery style take from media.php with .gallery-item width removed
 // .gallery-item width applied inline in gallery_shortcode_style_out().
 function gallery_style () { 
-?> 
+
+$output = apply_filters('gallery_style', "
 <!-- [gallery] shortcode style -->
 <style type='text/css'>
        .gallery {
@@ -109,7 +110,9 @@ function gallery_style () {
                 margin-left: 0;
         }
 </style>
-<?php 
+");
+ 
+echo $output;
 } 
 
 // Look ahead to check if any posts contain the [gallery] shortcode

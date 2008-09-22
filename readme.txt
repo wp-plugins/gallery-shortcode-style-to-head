@@ -2,8 +2,8 @@
 Contributors: sivel
 Tags: gallery, shortcode, style, css, xhtml, head
 Requires at least: 2.6
-Tested up to: 2.6.1
-Stable tag: 1.0
+Tested up to: 2.6.2
+Stable tag: 1.1
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
 validation
@@ -30,6 +30,10 @@ The ticket ticket associated with the above diff is set to milestone 2.9.  So it
 
 NOTE: See "Other Notes" for Upgrade and Usage Instructions as well as other pertinent topics.
 
+== Usage ==
+
+1. To override the default style use `add_filter('gallery_style', 'my_function');` somewhere in your theme, probably functions.php, where my_function returns the new style.  The new style should begin with `<style type="text/css">` and end with `</style>`
+
 == Upgrade ==
 
 1. Delete the previous `gallery-shortcode-style-to-head` folder from the `/wp-content/plugins/` directory
@@ -40,6 +44,9 @@ NOTE: See "Other Notes" for Upgrade and Usage Instructions as well as other pert
 1. Just activate and enjoy.  Nothing else is required.
 
 == Change Log ==
+
+= 1.1 (2008-09-22): =
+* Added filter so that the default style can be overridden.
 
 = 1.0 (2008-08-27): =
 * Initial Public Release
