@@ -8,7 +8,7 @@ Author URI: http://sivel.net/
 Version: 1.1
 
         Copyright (c) 2008 Matt Martz (http://sivel.net)
-        Gallery Attribute Adder is released under the GNU General Public License (GPL)
+        Gallery Shortcode Style to Head is released under the GNU General Public License (GPL)
 	http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
