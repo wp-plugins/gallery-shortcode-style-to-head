@@ -2,7 +2,7 @@
 Contributors: sivel
 Tags: gallery, shortcode, style, css, xhtml, head
 Requires at least: 2.6
-Tested up to: 2.6.2
+Tested up to: 2.7
 Stable tag: 1.1
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
