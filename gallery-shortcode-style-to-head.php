@@ -3,7 +3,7 @@
 Plugin Name: Gallery Shortcode Style to Head
 Plugin URI: http://sivel.net/wordpress/
 Description: Moves the gallery shortcode styles to the head so it doesn't break XHTML validation
-Author: Matt Martz <mdmartz@sivel.net>
+Author: Matt Martz
 Author URI: http://sivel.net/
 Version: 1.1
 
