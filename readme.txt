@@ -1,5 +1,5 @@
 === Gallery Shortcode Style to Head ===
-Contributors: sivel
+Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head
 Requires at least: 2.6
 Tested up to: 2.9
