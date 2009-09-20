@@ -1,14 +1,16 @@
 <?php
 /*
 Plugin Name: Gallery Shortcode Style to Head
-Plugin URI: http://sivel.net/wordpress/gallery-shortcode-style-to-head/
+Plugin URI: http://www.scottbradford.us/software/gallery-shortcode-style-to-head/
 Description: Moves the gallery shortcode styles to the head so it doesn't break XHTML validation
-Author: Matt Martz
-Author URI: http://sivel.net/
-Version: 1.1
+Author: Scott Bradford
+Author URI: http://www.scottbradford.us/
+Version: 1.2
 
-        Copyright (c) 2008 Matt Martz (http://sivel.net)
-        Gallery Shortcode Style to Head is released under the GNU General Public License (GPL)
+        Copyright (c) 2008 Matt Martz (http://sivel.net) (original author)
+        Copyright (c) 2009 Scott Bradford (http://www.scottbradford.us) (current maintainer)
+        
+    Gallery Shortcode Style to Head is released under the GNU General Public License (GPL)
 	http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
@@ -64,7 +66,7 @@ function gallery_shortcode_style_out ( $attr ) {
 		<div class='gallery'>";
 
 	foreach ( $attachments as $id => $attachment ) {
-		$link = wp_get_attachment_link ( $id, $size, true );
+		$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
 		$output .= "<{$itemtag} class='gallery-item' style='width:{$itemwidth}%'>";
 		$output .= "
 			<{$icontag} class='gallery-icon'>
@@ -73,7 +75,7 @@ function gallery_shortcode_style_out ( $attr ) {
 		if ( $captiontag && trim ( $attachment->post_excerpt ) ) {
 			$output .= "
 				<{$captiontag} class='gallery-caption'>
-				{$attachment->post_excerpt}
+				" . wptexturize($attachment->post_excerpt) . "
 				</{$captiontag}>";
 		}
 		$output .= "</{$itemtag}>";
