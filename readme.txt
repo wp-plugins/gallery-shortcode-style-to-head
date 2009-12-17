@@ -2,7 +2,7 @@
 Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
 Requires at least: 2.6
-Tested up to: 2.8
+Tested up to: 2.9
 Stable tag: 1.2
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
@@ -21,8 +21,8 @@ shortcode is used in any posts.
 This plugin uses ideas recommended in a patch located at
 http://trac.wordpress.org/attachment/ticket/6380/6380-style.diff
 
-There is a ticket associated with this validation issue currently set for WordPress 2.9:
-http://core.trac.wordpress.org/ticket/10734
+There is a ticket associated with this validation issue currently set for
+some future WordPress version: http://core.trac.wordpress.org/ticket/10734
 
 Special thanks to the original author of this plugin, Matt Martz, http://sivel.net.
 
@@ -47,6 +47,9 @@ NOTE: See "Other Notes" for Upgrade and Usage Instructions as well as other pert
 1. Just activate and enjoy. Nothing else is required.
 
 == Changelog ==
+
+= 1.2.1 (2009-12-16): =
+* Iterated the supported WordPress version to 2.9.
 
 = 1.2 (2009-09-20): =
 * Corrected function of 'Link thumbnails to...' setting on galleries when this plugin is enabled.
