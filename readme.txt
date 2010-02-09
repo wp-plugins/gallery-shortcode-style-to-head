@@ -3,7 +3,7 @@ Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
 Requires at least: 2.6
 Tested up to: 2.9
-Stable tag: 1.2
+Stable tag: 1.3
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
 validation
@@ -48,8 +48,8 @@ NOTE: See "Other Notes" for Upgrade and Usage Instructions as well as other pert
 
 == Changelog ==
 
-= 1.2.1 (2009-12-16): =
-* Iterated the supported WordPress version to 2.9.
+= 1.3 (2010-02-09): =
+* Re-Sync with WordPress 2.9 gallery code for support of the new 'include' and 'exclude' options.
 
 = 1.2 (2009-09-20): =
 * Corrected function of 'Link thumbnails to...' setting on galleries when this plugin is enabled.
