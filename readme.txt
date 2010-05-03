@@ -69,7 +69,7 @@ Immediately after installation, your galleries should pass W3C XHTML validation.
 
 == Changelog ==
 
-= 2.0 (2010-xx-xx): =
+= 2.0 (2010-05-02): =
 * New gallery style settings on the Admin > Settings > Media page.
 * Ability to modify the default gallery styles.
 * Ability to disable the default styles entirely (so you can style the gallery in your template CSS).
