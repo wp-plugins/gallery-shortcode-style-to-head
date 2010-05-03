@@ -7,8 +7,8 @@ Author: Scott Bradford
 Author URI: http://www.scottbradford.us/
 Version: 2.0
 
-        Copyright (c) 2008 Matt Martz (http://sivel.net) (original author)
-        Copyright (c) 2009-2010 Scott Bradford (http://www.scottbradford.us) (current maintainer)
+    Copyright (c) 2008 Matt Martz (http://sivel.net) (original author)
+    Copyright (c) 2009-2010 Scott Bradford (http://www.scottbradford.us) (current maintainer)
         
     Gallery Shortcode Style to Head is released under the GNU General Public License (GPL)
 	http://www.gnu.org/licenses/gpl-2.0.txt
