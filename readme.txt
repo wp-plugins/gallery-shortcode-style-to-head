@@ -1,52 +1,79 @@
 === Gallery Shortcode Style to Head ===
 Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
-Requires at least: 2.6
-Tested up to: 2.9
-Stable tag: 1.3
+Requires at least: 2.7
+Tested up to: 3.0
+Stable tag: 2.0
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
-validation
+validation; allows disabling or modifying the default gallery styles. 
 
 == Description ==
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
-validation.
+validation; allows disabling or modifying the default gallery styles.
 
-By default when using the gallery shortcode the styles are placed into the
-post content which breaks XHTML validation. This plugin places the style into
-the head of the page using a look ahead to determine if the [gallery]
+By default when using the WordPress gallery, the styles are placed into the
+post content which breaks XHTML validation. This plugin moves the style into
+the head of the page using a look-ahead to determine if the [gallery]
 shortcode is used in any posts.
+
+This plugin also gives you the option to modify the default gallery style
+CSS or disable the gallery styles entirely (so you can control it from your
+template CSS files).
 
 This plugin uses ideas recommended in a patch located at
 http://trac.wordpress.org/attachment/ticket/6380/6380-style.diff
-
-There is a ticket associated with this validation issue currently set for
-some future WordPress version: http://core.trac.wordpress.org/ticket/10734
 
 Special thanks to the original author of this plugin, Matt Martz, http://sivel.net.
 
 == Installation ==
 
-1. Upload the `gallery-shortcode-style-to-head` folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
+Installation is just like any other WordPress plugin:
 
-NOTE: See "Other Notes" for Upgrade and Usage Instructions as well as other pertinent topics.
+1. Upload the 'gallery-shortcode-style-to-head' folder to the '/wp-content/plugins/' directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
 
-== Usage ==
+Immediately after installation, your galleries should pass W3C XHTML validation. You can make further adjustments under Admin > Settings > Media.
 
-1. To override the default style use `add_filter('gallery_style', 'my_function');` somewhere in your theme, probably functions.php, where my_function returns the new style. The new style should begin with `<style type="text/css">` and end with `</style>`
+== Frequently Asked Questions ==
 
-== Upgrade ==
+= How do I make the WP galleries XHTML compliant? =
 
-1. Delete the previous `gallery-shortcode-style-to-head` folder from the `/wp-content/plugins/` directory
-1. Upload the new `gallery-shortcode-style-to-head` folder to the `/wp-content/plugins/` directory
+1. Just activate the plugin. Nothing else is required.
 
-== Usage ==
+= How do I adjust the default gallery CSS styles? =
 
-1. Just activate and enjoy. Nothing else is required.
+1. In WP admin, go to Settings > Media.
+2. Scroll down to "Modify gallery CSS style.'"
+3. Adjust to your liking!
+4. Click "Save Changes."
+
+= How do I disable the CSS styles (so I can control the CSS in my template)? =
+
+1. In WP admin, go to Settings > Media.
+2. Scroll down to "Disable gallery CSS in 'head.'"
+3. Check the box.
+4. Click "Save Changes."
+
+= How do I reset the gallery CSS styles to default? =
+
+1. In WP admin, go to Settings > Media.
+2. Scroll down to "Modify gallery CSS style.'"
+3. Clear everything in the text field (so it's totally empty).
+4. Click "Save Changes." The styles will be reset to default.
+
+== Screenshots ==
+
+1. Plugin settings (under Admin > Settings > Media).
 
 == Changelog ==
+
+= 2.0 (2010-xx-xx): =
+* New gallery style settings on the Admin > Settings > Media page.
+* Ability to modify the default gallery styles.
+* Ability to disable the default styles entirely (so you can style the gallery in your template CSS).
+* Support for WordPress 3.0; now requires WordPress 2.7 or higher.
 
 = 1.3 (2010-02-09): =
 * Re-Sync with WordPress 2.9 gallery code for support of the new 'include' and 'exclude' options.
@@ -59,3 +86,8 @@ NOTE: See "Other Notes" for Upgrade and Usage Instructions as well as other pert
 
 = 1.0 (2008-08-27): =
 * Initial Public Release
+
+== Upgrade Notice ==
+
+= 2.0 =
+Adds ability to modify or disable the default styles from WP admin; supports WP 3.0.
