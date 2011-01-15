@@ -71,7 +71,7 @@ You can make further adjustments under Admin > Settings > Media.
 == Changelog ==
 
 = 2.1 (2011-01-15): =
-* Removed clearing <br> tags in galleries (replaced with clearing <div> tags).
+* Removed clearing br tags in galleries (replaced with clearing div tags).
 * Corrected bug that threw a cryptic error on the media page for some users.
 * Support for WordPress 3.1; now requires WordPress 2.9 or higher.
 
