@@ -5,10 +5,10 @@ Plugin URI: http://www.scottbradford.us/software/gallery-shortcode-style-to-head
 Description: Moves the gallery shortcode styles to the head so it doesn't break XHTML validation; allows disabling or modifying the default gallery styles. 
 Author: Scott Bradford
 Author URI: http://www.scottbradford.us/
-Version: 2.0
+Version: 2.1
 
     Copyright (c) 2008 Matt Martz (http://sivel.net) (original author)
-    Copyright (c) 2009-2010 Scott Bradford (http://www.scottbradford.us) (current maintainer)
+    Copyright (c) 2009-2011 Scott Bradford (http://www.scottbradford.us) (current maintainer)
         
     Gallery Shortcode Style to Head is released under the GNU General Public License (GPL)
 	http://www.gnu.org/licenses/gpl-2.0.txt
@@ -27,11 +27,16 @@ $defStyle = ".gallery { margin: auto; }
 // initialize the settings variables
 add_action('admin_init', 'add_gssth_setting' );
 function add_gssth_setting() {
-	add_settings_section('gssth','Gallery CSS Styles','','media');
-	add_settings_field('gssth_disable_gallery_style','Disable gallery CSS in \'head\'','build_disable_gallery_styles','media','gssth');
-	add_settings_field('gssth_override_gallery_style','Modify gallery CSS style','build_override_gallery_styles','media','gssth');
 	register_setting( 'media', 'gssth_disable_gallery_style' );
 	register_setting( 'media', 'gssth_override_gallery_style' );
+	add_settings_section('gssth','Gallery CSS Styles','display_gssth_description','media');
+	add_settings_field('gssth_disable_gallery_style','Disable gallery CSS in \'head\'','build_disable_gallery_styles','media','gssth');
+	add_settings_field('gssth_override_gallery_style','Modify gallery CSS style','build_override_gallery_styles','media','gssth');
+}
+
+// display the GSSTH description
+function display_gssth_description() {
+	echo "<p>Override or disable the default WordPress gallery styles. To reset to default styles, un-check the disable option, clear out the style code (so it is completely empty), and save the changes.</p>";
 }
 
 // handle the disable/enable check box
@@ -124,8 +129,9 @@ function gallery_shortcode_style_out ( $attr ) {
 	$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
 
 	$selector = "gallery-{$instance}";
+	$size_class = sanitize_html_class( $size );
 
-	$output = apply_filters('gallery_style', "<div id='$selector' class='gallery galleryid-{$id}'>");
+	$output = apply_filters('gallery_style', "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>");
 
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {
@@ -138,28 +144,28 @@ function gallery_shortcode_style_out ( $attr ) {
 			</{$icontag}>";
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
 			$output .= "
-				<{$captiontag} class='gallery-caption'>
+				<{$captiontag} class='wp-caption-text gallery-caption'>
 				" . wptexturize($attachment->post_excerpt) . "
 				</{$captiontag}>";
 		}
 		$output .= "</{$itemtag}>";
 		if ( $columns > 0 && ++$i % $columns == 0 )
-			$output .= '<br style="clear: both" />';
+			$output .= '<div style="clear: both"></div>';
 	}
 
 	$output .= "
-			<br style='clear: both;' />
+			<div style='clear: both;'></div>
 		</div>\n";
 
 	return $output;
 }
 
-// Default gallery style take from media.php with .gallery-item width removed
+// Default gallery style taken from media.php with .gallery-item width removed
 // .gallery-item width applied inline in gallery_shortcode_style_out().
 function gallery_style () { 
 	global $defStyle;
 	$output = "
-<!-- Gallery Shortcode Style to Head 2.0 -->
+<!-- Gallery Shortcode Style to Head 2.1 -->
 <style type='text/css'>
 ";
 	if (get_option('gssth_override_gallery_style')) { // if the style is saved, export the saved style

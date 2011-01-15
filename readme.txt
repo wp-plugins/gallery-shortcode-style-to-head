@@ -1,9 +1,9 @@
 === Gallery Shortcode Style to Head ===
 Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
-Requires at least: 2.7
-Tested up to: 3.0
-Stable tag: 2.0
+Requires at least: 2.9
+Tested up to: 3.1
+Stable tag: 2.1
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
 validation; allows disabling or modifying the default gallery styles. 
@@ -34,7 +34,8 @@ Installation is just like any other WordPress plugin:
 1. Upload the 'gallery-shortcode-style-to-head' folder to the '/wp-content/plugins/' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
-Immediately after installation, your galleries should pass W3C XHTML validation. You can make further adjustments under Admin > Settings > Media.
+Immediately after installation, your galleries should pass W3C XHTML validation.
+You can make further adjustments under Admin > Settings > Media.
 
 == Frequently Asked Questions ==
 
@@ -59,8 +60,8 @@ Immediately after installation, your galleries should pass W3C XHTML validation.
 = How do I reset the gallery CSS styles to default? =
 
 1. In WP admin, go to Settings > Media.
-2. Scroll down to "Modify gallery CSS style.'"
-3. Clear everything in the text field (so it's totally empty).
+2. Un-check the setting for "Disable gallery CSS in 'head'."
+3. Clear everything in the "Modify gallery CSS style" text field (so it's totally empty).
 4. Click "Save Changes." The styles will be reset to default.
 
 == Screenshots ==
@@ -68,6 +69,11 @@ Immediately after installation, your galleries should pass W3C XHTML validation.
 1. Plugin settings (under Admin > Settings > Media).
 
 == Changelog ==
+
+= 2.1 (2011-01-15): =
+* Removed clearing <br> tags in galleries (replaced with clearing <div> tags).
+* Corrected bug that threw a cryptic error on the media page for some users.
+* Support for WordPress 3.1; now requires WordPress 2.9 or higher.
 
 = 2.0 (2010-05-02): =
 * New gallery style settings on the Admin > Settings > Media page.
@@ -88,6 +94,9 @@ Immediately after installation, your galleries should pass W3C XHTML validation.
 * Initial Public Release
 
 == Upgrade Notice ==
+
+= 2.1 =
+Bugfixes, re-sync with WP 3.1 code, and support for WP 3.1.
 
 = 2.0 =
 Adds ability to modify or disable the default styles from WP admin; supports WP 3.0.
