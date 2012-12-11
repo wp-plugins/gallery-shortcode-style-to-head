@@ -5,10 +5,10 @@ Plugin URI: http://www.scottbradford.us/software/gallery-shortcode-style-to-head
 Description: Moves the gallery shortcode styles to the head so it doesn't break XHTML validation; allows disabling or modifying the default gallery styles. 
 Author: Scott Bradford
 Author URI: http://www.scottbradford.us/
-Version: 2.1
+Version: 2.2
 
     Copyright (c) 2008 Matt Martz (http://sivel.net) (original author)
-    Copyright (c) 2009-2011 Scott Bradford (http://www.scottbradford.us) (current maintainer)
+    Copyright (c) 2009-2012 Scott Bradford (http://www.scottbradford.us) (current maintainer)
         
     Gallery Shortcode Style to Head is released under the GNU General Public License (GPL)
 	http://www.gnu.org/licenses/gpl-2.0.txt
@@ -68,6 +68,13 @@ function gallery_shortcode_style_out ( $attr ) {
 
 	static $instance = 0;
 	$instance++;
+	
+	if ( ! empty( $attr['ids'] ) ) {
+		// 'ids' is explicitly ordered, unless you specify otherwise.
+		if ( empty( $attr['orderby'] ) )
+			$attr['orderby'] = 'post__in';
+		$attr['include'] = $attr['ids'];
+	}
 
 	// Allow plugins/themes to override the default gallery template.
 	$output = apply_filters('post_gallery', '', $attr);
@@ -99,7 +106,6 @@ function gallery_shortcode_style_out ( $attr ) {
 		$orderby = 'none';
 
 	if ( !empty($include) ) {
-		$include = preg_replace( '/[^0-9,]+/', '', $include );
 		$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
 
 		$attachments = array();
@@ -107,7 +113,6 @@ function gallery_shortcode_style_out ( $attr ) {
 			$attachments[$val->ID] = $_attachments[$key];
 		}
 	} elseif ( !empty($exclude) ) {
-		$exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
 		$attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
 	} else {
 		$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
@@ -129,15 +134,16 @@ function gallery_shortcode_style_out ( $attr ) {
 	$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
 
 	$selector = "gallery-{$instance}";
-	$size_class = sanitize_html_class( $size );
-
-	$output = apply_filters('gallery_style', "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>");
+	
+	$size_class = sanitize_html_class( $size, '' );
+	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+	$output = apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );
 
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {
 		$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
 
-		$output .= "<{$itemtag} class='gallery-item' style='width:{$itemwidth}%'>";
+		$output .= "<{$itemtag} class='gallery-item' style='width:{$itemwidth}%;'>";
 		$output .= "
 			<{$icontag} class='gallery-icon'>
 				$link
@@ -165,7 +171,7 @@ function gallery_shortcode_style_out ( $attr ) {
 function gallery_style () { 
 	global $defStyle;
 	$output = "
-<!-- Gallery Shortcode Style to Head 2.1 -->
+<!-- Gallery Shortcode Style to Head -->
 <style type='text/css'>
 ";
 	if (get_option('gssth_override_gallery_style')) { // if the style is saved, export the saved style

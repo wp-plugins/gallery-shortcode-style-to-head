@@ -2,8 +2,8 @@
 Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
 Requires at least: 2.9
-Tested up to: 3.4
-Stable tag: 2.1
+Tested up to: 3.5
+Stable tag: 2.2
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
 validation; allows disabling or modifying the default gallery styles. 
@@ -70,6 +70,9 @@ You can make further adjustments under Admin > Settings > Media.
 
 == Changelog ==
 
+= 2.2 (2012-12-11): =
+* Support for WordPress 3.5 and its improved galleries.
+
 = 2.1 (2011-01-15): =
 * Removed clearing br tags in galleries (replaced with clearing div tags).
 * Corrected bug that threw a cryptic error on the media page for some users.
@@ -94,6 +97,9 @@ You can make further adjustments under Admin > Settings > Media.
 * Initial Public Release
 
 == Upgrade Notice ==
+
+= 2.2 =
+Re-sync with WP 3.5 code; improved compatibility with WP 3.5 galleries.
 
 = 2.1 =
 Bugfixes, re-sync with WP 3.1 code, and support for WP 3.1.
