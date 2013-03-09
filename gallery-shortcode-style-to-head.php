@@ -5,7 +5,7 @@ Plugin URI: http://www.scottbradford.us/software/gallery-shortcode-style-to-head
 Description: Moves the gallery shortcode styles to the head so it doesn't break XHTML validation; allows disabling or modifying the default gallery styles. 
 Author: Scott Bradford
 Author URI: http://www.scottbradford.us/
-Version: 2.2
+Version: 2.3
 
     Copyright (c) 2008 Matt Martz (http://sivel.net) (original author)
     Copyright (c) 2009-2012 Scott Bradford (http://www.scottbradford.us) (current maintainer)
@@ -14,12 +14,17 @@ Version: 2.2
 	http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
-// define the default styles
-$float = $wp_locale->text_direction == 'rtl' ? 'right' : 'left';
-$defStyle = ".gallery { margin: auto; }
+add_action('init','gssth_init');
+
+function gssth_init() {
+	// define the default styles
+	global $defStyle;
+	$float = is_rtl() ? 'right' : 'left';
+	$defStyle = ".gallery { margin: auto; }
 .gallery .gallery-item { float: {$float}; margin-top: 10px; text-align: center; }
 .gallery img { border: 2px solid #cfcfcf; }
 .gallery .gallery-caption { margin-left: 0; }";
+}
 
 // These functions add a check box to the media settings page in wp-admin so you can disable the default styles entirely
 // That way, you can put the styles in your template stylesheet(s) [where they belong] if you want.
@@ -204,6 +209,7 @@ function gallery_scan () {
 // Tell WordPress what to do
 remove_shortcode ( 'gallery_shortcode' );			// Remove included WordPress [gallery] shortcode function
 add_shortcode ( 'gallery' , 'gallery_shortcode_style_out' );	// Add new [gallery] shortcode function
-if (!get_option('gssth_disable_gallery_style'))  // don't do the look-ahead if styles are disabled
+if (!get_option('gssth_disable_gallery_style')) {  // don't do the look-ahead if styles are disabled
 	add_action ( 'template_redirect' , 'gallery_scan' );		// Add look ahead for [gallery] shortcode
+}
 ?>

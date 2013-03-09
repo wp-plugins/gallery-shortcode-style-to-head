@@ -1,7 +1,7 @@
 === Gallery Shortcode Style to Head ===
 Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
-Requires at least: 2.9
+Requires at least: 3.0
 Tested up to: 3.5
 Stable tag: 2.2
 
@@ -70,6 +70,10 @@ You can make further adjustments under Admin > Settings > Media.
 
 == Changelog ==
 
+= 2.3 (2013-03-08): =
+* Corrected 'undefined varibale' notice and RTL language detection.
+* Now requires WordPress 3.0 or higher.
+
 = 2.2 (2012-12-11): =
 * Support for WordPress 3.5 and its improved galleries.
 
@@ -97,6 +101,9 @@ You can make further adjustments under Admin > Settings > Media.
 * Initial Public Release
 
 == Upgrade Notice ==
+
+= 2.3 =
+Correct an 'undefined variable' warning/error.
 
 = 2.2 =
 Re-sync with WP 3.5 code; improved compatibility with WP 3.5 galleries.
