@@ -3,7 +3,7 @@ Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.2
+Stable tag: 2.3
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
 validation; allows disabling or modifying the default gallery styles. 
