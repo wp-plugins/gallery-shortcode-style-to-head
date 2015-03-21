@@ -2,11 +2,11 @@
 Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
 Requires at least: 3.0
-Tested up to: 3.5
+Tested up to: 4.1
 Stable tag: 2.3
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
-validation; allows disabling or modifying the default gallery styles. 
+validation; allows disabling or modifying the default gallery styles.
 
 == Description ==
 
@@ -69,6 +69,10 @@ You can make further adjustments under Admin > Settings > Media.
 1. Plugin settings (under Admin > Settings > Media).
 
 == Changelog ==
+
+= 2.3.1 (2015-02-xx): =
+* Plugin is now translateable.
+* Code cleanup and support for latest WordPress.
 
 = 2.3 (2013-03-08): =
 * Corrected 'undefined varibale' notice and RTL language detection.
