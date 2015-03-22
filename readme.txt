@@ -1,7 +1,7 @@
 === Gallery Shortcode Style to Head ===
 Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
-Requires at least: 3.0
+Requires at least: 3.3
 Tested up to: 4.1
 Stable tag: 2.3
 
