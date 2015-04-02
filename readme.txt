@@ -3,7 +3,7 @@ Contributors: achmafooma, sivel
 Tags: gallery, shortcode, style, css, xhtml, head, validation
 Requires at least: 3.3
 Tested up to: 4.1
-Stable tag: 2.3
+Stable tag: 2.4
 
 Moves the gallery shortcode styles to the head so it doesn't break XHTML
 validation; allows disabling or modifying the default gallery styles.
@@ -25,7 +25,10 @@ template CSS files).
 This plugin uses ideas recommended in a patch located at
 http://trac.wordpress.org/attachment/ticket/6380/6380-style.diff
 
-Special thanks to the original author of this plugin, Matt Martz, http://sivel.net.
+Special thanks to
+* The original author: Matt Martz, http://sivel.net
+* Serbo-Croatian (sr_RS) translation: Borisa Djuraskovic, http://www.webhostinghub.com
+* Spanish (es_ES) translation: Ogi Djuraskovic, http://www.webhostinghub.com/
 
 == Installation ==
 
@@ -70,9 +73,11 @@ You can make further adjustments under Admin > Settings > Media.
 
 == Changelog ==
 
-= 2.3.1 (2015-02-xx): =
+= 2.4 (2015-03-02): =
 * Plugin is now translateable.
 * Code cleanup and support for latest WordPress.
+* Serbo-Croatian (sr_RS) translation by Borisa Djuraskovic, http://www.webhostinghub.com.
+* Spanish (es_ES) translation by Ogi Djuraskovic, http://www.webhostinghub.com/.
 
 = 2.3 (2013-03-08): =
 * Corrected 'undefined varibale' notice and RTL language detection.

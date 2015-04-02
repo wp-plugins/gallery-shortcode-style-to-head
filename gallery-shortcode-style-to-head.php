@@ -5,7 +5,7 @@ Plugin URI: http://www.intersanity.com/software/
 Description: Moves the gallery shortcode styles to the head so it doesn't break XHTML validation; allows disabling or modifying the default gallery styles.
 Author: Intersanity Enterprises
 Author URI: http://www.intersanity.com/
-Version: 2.3.1
+Version: 2.4
 
     Copyright (c) 2008 Matt Martz (http://sivel.net) (original author)
     Copyright (c) 2009-2015 Intersanity Enterprises (Scott Bradford) (http://www.intersanity.com/software/) (current maintainer)
