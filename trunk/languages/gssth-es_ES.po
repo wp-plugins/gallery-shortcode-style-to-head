@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Shortcode Style to Head 2.3.1\n"
+"POT-Creation-Date: 2015-03-21 21:39-0500\n"
+"PO-Revision-Date: 2015-03-26 11:11+0100\n"
+"Last-Translator: \n"
+"Language-Team: Intersanity Enterprises <admin@intersanity.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../gallery-shortcode-style-to-head.php:49
+msgid "Gallery CSS Styles"
+msgstr "Estilos de Gallery CSS"
+
+#: ../gallery-shortcode-style-to-head.php:50
+msgid "Disable gallery CSS in 'head'"
+msgstr "Deshabilitar gallery CSS en 'head'"
+
+#: ../gallery-shortcode-style-to-head.php:51
+msgid "Modify gallery CSS style"
+msgstr "Modificar estilo de gallery CSS"
+
+#: ../gallery-shortcode-style-to-head.php:56
+msgid ""
+"Override or disable the default WordPress gallery styles. To reset to "
+"default styles, un-check the disable option, clear out the style code (so it "
+"is completely empty), and save the changes."
+msgstr ""
+"Sobrescribir o deshabilitar los estilos por defecto de la galería de "
+"WordPress. Para restaurar los estilos por defecto, deseleccione la opción "
+"deshabilitar, vacíe el código de estilo (para que esté completamente vacío), "
+"y salve los cambios."
+
+#: ../gallery-shortcode-style-to-head.php:65
+msgid "Disable the default gallery CSS styles"
+msgstr "Deshabilitar los estilos por defecto de gallery CSS"
+
+#: ../gallery-shortcode-style-to-head.php:66
+msgid ""
+"Disable the default gallery CSS styles (so you can handle it in your "
+"template stylesheets)"
+msgstr ""
+"Deshabilitar los estilos por defecto de gallery CSS (por lo que usted pueda "
+"manejarlos en sus plantillas de hojas de estilos)"
