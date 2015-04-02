@@ -26,8 +26,11 @@ This plugin uses ideas recommended in a patch located at
 http://trac.wordpress.org/attachment/ticket/6380/6380-style.diff
 
 Special thanks to
+
 * The original author: Matt Martz, http://sivel.net
+
 * Serbo-Croatian (sr_RS) translation: Borisa Djuraskovic, http://www.webhostinghub.com
+
 * Spanish (es_ES) translation: Ogi Djuraskovic, http://www.webhostinghub.com/
 
 == Installation ==
