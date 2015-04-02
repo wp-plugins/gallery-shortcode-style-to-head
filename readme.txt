@@ -76,7 +76,7 @@ You can make further adjustments under Admin > Settings > Media.
 
 == Changelog ==
 
-= 2.4 (2015-03-02): =
+= 2.4 (2015-04-02): =
 * Plugin is now translateable.
 * Code cleanup and support for latest WordPress.
 * Serbo-Croatian (sr_RS) translation by Borisa Djuraskovic, http://www.webhostinghub.com.
